@@ -20,7 +20,6 @@
         "eslint": "8.22.0",
         "eslint-config-next": "12.2.5",
         "eslint-config-prettier": "8.5.0",
-        "node-fetch": "3.2.10",
         "postcss": "8.4.16",
         "postcss-flexbugs-fixes": "5.0.2",
         "postcss-font-magician": "3.0.0",
