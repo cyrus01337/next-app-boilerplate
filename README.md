@@ -41,5 +41,6 @@ yarn create next-app -e https://github.com/cyrus01337/next-app-boilerplate .
 
 ### Prettier
 
+-   `@trivago/prettier-plugin-sort-imports` - auto-sorts JS imports
 -   `prettier-plugin-sort-json` - JSON file formatting, typically for configs
 -   `prettier-plugin-tailwindcss` - auto-sorts Tailwind classes in JSX
