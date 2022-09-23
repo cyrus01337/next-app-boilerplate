@@ -14,19 +14,5 @@ module.exports = {
                 stage: 3,
             },
         ],
-        [
-            "postcss-font-magician",
-            {
-                display: "swap",
-                variants: {
-                    Inter: {
-                        400: [],
-                        "400 bold": [],
-                        700: [],
-                        "700 bold": [],
-                    },
-                },
-            },
-        ],
     ],
 };
