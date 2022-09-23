@@ -21,6 +21,8 @@
         "eslint-config-next": "12.2.5",
         "eslint-config-prettier": "8.5.0",
         "postcss": "8.4.16",
+        "postcss-flexbugs-fixes": "5.0.2",
+        "postcss-preset-env": "7.8.2",
         "prettier": "2.7.1",
         "prettier-plugin-sort-json": "0.0.3",
         "prettier-plugin-tailwindcss": "0.1.13",
