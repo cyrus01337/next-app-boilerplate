@@ -4,9 +4,5 @@ import Image from "next/image";
 import Layout from "@/components/Layout";
 
 export default function Home() {
-    return (
-        <Layout>
-            <main>Hello, World!</main>
-        </Layout>
-    );
+    return <Layout>Hello, World!</Layout>;
 }
