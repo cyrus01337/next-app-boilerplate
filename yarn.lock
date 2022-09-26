@@ -4041,6 +4041,7 @@ __metadata:
     eslint: 8.22.0
     eslint-config-next: 12.2.5
     eslint-config-prettier: 8.5.0
+    lodash: 4.17.21
     next: 12.2.5
     postcss: 8.4.16
     postcss-flexbugs-fixes: 5.0.2
