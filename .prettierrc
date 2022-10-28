@@ -1,0 +1,13 @@
+{
+    "arrowParens": "avoid",
+    "importOrder": ["<THIRD_PARTY_MODULES>", "^@?[./]"],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true,
+    "jsonRecursiveSort": true,
+    "plugins": [
+        "@trivago/prettier-plugin-sort-imports",
+        "prettier-plugin-sort-json",
+        "prettier-plugin-tailwindcss"
+    ],
+    "tabWidth": 4
+}
