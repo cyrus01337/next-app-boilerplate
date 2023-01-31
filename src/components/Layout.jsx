@@ -1,5 +1,5 @@
-import Head from "next/head";
 import { capitalize as capitalise } from "lodash";
+import Head from "next/head";
 import { useRouter } from "next/router";
 
 export default function Layout({ className, children, title }) {
