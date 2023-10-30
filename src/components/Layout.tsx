@@ -1,10 +1,17 @@
 import { capitalize as capitalise } from "lodash";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import React from "react";
 
-function Home({ className, children, title }) {
+type Props = {
+    className?: string;
+    children?: React.ReactNode;
+    title?: string;
+};
+
+function Home(props: Props) {
     const { pathname } = useRouter();
-    title ??= pathname === "/" ? "Home" : capitalise(pathname.slice(1));
+    const title = props.title ?? pathname === "/" ? "Home" : capitalise(pathname.slice(1));
 
     return (
         <>
@@ -12,7 +19,7 @@ function Home({ className, children, title }) {
                 <title>{title}</title>
             </Head>
 
-            <main className={className}>{children}</main>
+            <main className={props.className}>{props.children}</main>
         </>
     );
 }

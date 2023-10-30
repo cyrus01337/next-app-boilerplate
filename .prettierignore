@@ -4,3 +4,5 @@
 build
 coverage
 .pnp.*
+pnpm-lock.yaml
+bun.lockb
