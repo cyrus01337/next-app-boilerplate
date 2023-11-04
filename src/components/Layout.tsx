@@ -11,7 +11,7 @@ type Props = {
 
 function Home(props: Props) {
     const { pathname } = useRouter();
-    const title = props.title ?? pathname === "/" ? "Home" : capitalise(pathname.slice(1));
+    const title = props.title ?? (pathname === "/" ? "Home" : capitalise(pathname.slice(1)));
 
     return (
         <>
