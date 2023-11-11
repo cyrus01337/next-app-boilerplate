@@ -7,10 +7,26 @@ This is a template repository used to simplify the above, as setting this up for
 ## Usage
 
 ```sh
+npx create-next-app@latest -e https://github.com/cyrus01337/next-app-boilerplate .
+```
+
+```sh
 yarn create next-app -e https://github.com/cyrus01337/next-app-boilerplate .
 ```
 
-`.` is the current directory, meaning the project will be generated in the directory this command is invoked under, whereas omitting the `.` (path) creates a sub-directory and goes through the typical interactive installation.
+```sh
+pnpx create next-app -e https://github.com/cyrus01337/next-app-boilerplate .
+```
+
+```sh
+bunx create-next-app -e https://github.com/cyrus01337/next-app-boilerplate .
+```
+
+`.` is the current directory, meaning the project will be generated in the directory this command is
+invoked under, whereas omitting the `.` (path) creates a sub-directory and goes through the typical
+interactive installation.
+
+There is a lack of real support for Bun at the moment due to lacking support from ESLint I believe?
 
 ## Inclusions
 
@@ -18,19 +34,20 @@ yarn create next-app -e https://github.com/cyrus01337/next-app-boilerplate .
 -   [PostCSS](https://postcss.org/)
 -   [TailwindCSS](https://tailwindcss.com/)
 -   [Prettier](https://prettier.io/)
+-   [TypeScript](https://www.typescriptlang.org)
 
 ## Plugins
 
 ### ESLint
 
 -   `eslint-config-prettier` - prevents ESLint conflictions with Prettier
--   `yarn create next-app` additions
+-   `create next-app` additions
     -   `eslint-config-next`
+-   `@typescript-eslint/parser`/`@typescript-eslint/eslint-plugin` - to parse and process TypeScript
 
 ### PostCSS
 
--   `postcss-font-magician` - makes adding fonts much, much easier
--   `yarn create next-app` additions
+-   `create next-app` additions
     -   `autoprefixer`
     -   `postcss-flexbugs-fixes`
     -   `postcss-preset-env`
@@ -41,6 +58,6 @@ yarn create next-app -e https://github.com/cyrus01337/next-app-boilerplate .
 
 ### Prettier
 
--   `@trivago/prettier-plugin-sort-imports` - auto-sorts JS imports
+-   `@ianvs/prettier-plugin-sort-imports` - auto-sorts JS imports (alternative to Trivago, much more customisation)
 -   `prettier-plugin-sort-json` - JSON file formatting, typically for configs
 -   `prettier-plugin-tailwindcss` - auto-sorts Tailwind classes in JSX
