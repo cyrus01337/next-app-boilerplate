@@ -3,11 +3,11 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
 
-type Props = {
+interface Props {
     className?: string;
     children?: React.ReactNode;
     title?: string;
-};
+}
 
 function Home(props: Props) {
     const { pathname } = useRouter();
