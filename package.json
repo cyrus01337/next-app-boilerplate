@@ -9,7 +9,7 @@
         "format": "prettier --write .",
         "preview": "next build && next start",
         "start": "next start",
-        "lint": "next lint && tsc --noEmit"
+        "lint": "next lint && tsc"
     },
     "dependencies": {
         "lodash": "^4.17.21",
