@@ -1,8 +1,7 @@
-# Ignore artifacts:
 .next
+.pnp.*
 .yarn
 build
-coverage
-.pnp.*
-pnpm-lock.yaml
 bun.lockb
+coverage
+pnpm-lock.yaml
