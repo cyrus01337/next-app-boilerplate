@@ -7,9 +7,9 @@
         "incremental": true,
         "isolatedModules": true,
         "jsx": "preserve",
-        "lib": ["dom", "dom.iterable", "esnext"],
-        "module": "esnext",
-        "moduleResolution": "node",
+        "lib": ["DOM", "DOM.Iterable", "ESNext"],
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
         "noEmit": true,
         "paths": {
             "@/*": ["./src/*"],
@@ -17,8 +17,8 @@
         },
         "resolveJsonModule": true,
         "skipLibCheck": true,
-        "strict": false,
-        "target": "ES2021",
+        "strict": true,
+        "target": "ESNext",
         "plugins": [
             {
                 "name": "next",
