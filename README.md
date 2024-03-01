@@ -30,7 +30,8 @@ gh repo create -t cyrus01337/next-app-boilerplate --public --clone "<name>"
 invoked under, whereas omitting the `.` (path) creates a sub-directory and goes through the typical
 interactive installation.
 
-There is a lack of real support for Bun at the moment due to lacking support from ESLint I believe?
+There is a lack of real support for Bun at the moment due to lacking support
+from ESLint I believe? So this will have to be setup [manually.](https://bun.sh/docs/typescript)
 
 ## Inclusions
 
