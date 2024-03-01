@@ -26,5 +26,5 @@
         ],
     },
     "exclude": ["node_modules/"],
-    "include": ["./src/**/*", "./*.js", "./*.cjs", "./*.ts", ".next/types/**/*.ts"],
+    "include": ["./src/**/*", "./*.js", "./*.cjs", "./*.ts", "./*.mjs", ".next/types/**/*.ts"],
 }
