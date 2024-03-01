@@ -43,7 +43,9 @@ There is a lack of real support for Bun at the moment due to lacking support fro
 -   `eslint-config-prettier` - prevents ESLint conflictions with Prettier
 -   `create next-app` additions
     -   `eslint-config-next`
--   `@typescript-eslint/parser`/`@typescript-eslint/eslint-plugin` - to parse and process TypeScript
+-   `next/core-web-vitals` - helpful concepts to cover in any Next web app
+-   `@typescript-eslint/parser`/`@typescript-eslint/eslint-plugin` - to parse
+    and process TypeScript
 
 ### PostCSS
 
@@ -51,6 +53,7 @@ There is a lack of real support for Bun at the moment due to lacking support fro
     -   `autoprefixer`
     -   `postcss-flexbugs-fixes`
     -   `postcss-preset-env`
+-   `tailwindcss` - simple, concise CSS library for simplifying styles with sensible defaults
 
 ### TailwindCSS
 
@@ -58,6 +61,8 @@ There is a lack of real support for Bun at the moment due to lacking support fro
 
 ### Prettier
 
--   `@ianvs/prettier-plugin-sort-imports` - auto-sorts JS imports (alternative to Trivago, much more customisation)
+-   `@ianvs/prettier-plugin-sort-imports` - auto-sorts JS imports (alternative
+    to [Trivago's implementation](https://github.com/trivago/prettier-plugin-sort-imports),
+    much more customisation)
 -   `prettier-plugin-sort-json` - JSON file formatting, typically for configs
 -   `prettier-plugin-tailwindcss` - auto-sorts Tailwind classes in JSX
