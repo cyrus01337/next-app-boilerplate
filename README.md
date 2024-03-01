@@ -22,6 +22,10 @@ pnpx create next-app -e https://github.com/cyrus01337/next-app-boilerplate .
 bunx create-next-app -e https://github.com/cyrus01337/next-app-boilerplate .
 ```
 
+```sh
+gh repo create -t cyrus01337/next-app-boilerplate --public --clone "<name>"
+```
+
 `.` is the current directory, meaning the project will be generated in the directory this command is
 invoked under, whereas omitting the `.` (path) creates a sub-directory and goes through the typical
 interactive installation.
