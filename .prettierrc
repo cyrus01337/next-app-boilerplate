@@ -8,9 +8,8 @@
         "",
         "^@/(.*)",
         "^~/(.*)",
-        "^/(.*)",
-        "^./(.*)",
-        "^../(.*)",
+        "^[\.]*/(.*)",
+        "",
         "<TYPES>"
     ],
     "importOrderParserPlugins": ["typescript", "jsx", "importAssertions"],
