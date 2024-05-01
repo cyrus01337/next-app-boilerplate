@@ -1,0 +1,4 @@
+localhost,
+http://127.0.0.1 {
+	reverse_proxy webserver:3000
+}
