@@ -1,0 +1,7 @@
+.devcontainer/
+node_modules/
+.*
+LICENSE
+*.ts
+*.md
+*.cjs
