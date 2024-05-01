@@ -4,7 +4,7 @@
     "dockerFile": "Dockerfile",
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
     "workspaceFolder": "/workspace",
-    "postCreateCommand": "apt update && apt upgrade -y && bun install",
+    "postCreateCommand": "bun install",
     "customizations": {
         "vscode": {
             "extensions": [
