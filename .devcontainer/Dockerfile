@@ -2,8 +2,8 @@ FROM mcr.microsoft.com/devcontainers/javascript-node:22 AS base
 ENV DEBIAN_FRONTEND=noninteractive
 WORKDIR /workspace
 
-RUN apt-get update && \
-    apt install -y curl unzip
+RUN ["apt", "update"]
+RUN ["apt", "install", "-y", "curl", "unzip"]
 
 FROM base AS bun
 USER node
