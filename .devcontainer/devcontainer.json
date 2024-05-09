@@ -1,9 +1,9 @@
 {
     "name": "Next App Boilerplate",
-    "image": "node:22-bookworm-slim",
     "dockerFile": "Dockerfile",
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
     "workspaceFolder": "/workspace",
+    "postCreateUser": "node",
     "postCreateCommand": "bun install",
     "customizations": {
         "vscode": {
