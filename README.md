@@ -41,6 +41,7 @@ from ESLint I believe? So this will have to be setup [manually.](https://bun.sh/
 -   [TailwindCSS](https://tailwindcss.com/)
 -   [Prettier](https://prettier.io/)
 -   [TypeScript](https://www.typescriptlang.org)
+-   [Husky](https://typicode.github.io/husky/)
 
 ## Plugins
 
@@ -72,3 +73,6 @@ from ESLint I believe? So this will have to be setup [manually.](https://bun.sh/
     much more customisation)
 -   `prettier-plugin-sort-json` - JSON file formatting, typically for configs
 -   `prettier-plugin-tailwindcss` - auto-sorts Tailwind classes in JSX
+
+### Husky
+-   `lint-staged` - makes pre-commit hooks efficient by only running commands across staged files
