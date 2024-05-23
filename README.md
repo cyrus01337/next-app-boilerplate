@@ -23,7 +23,8 @@ bunx create-next-app -e https://github.com/cyrus01337/next-app-boilerplate .
 ```
 
 ```sh
-gh repo create -t cyrus01337/next-app-boilerplate --public --clone "<name>"
+gh repo create -p cyrus01337/next-app-boilerplate --public --clone $(basename $PWD) && \
+gh repo clone $(basename $PWD) .
 ```
 
 `.` is the current directory, meaning the project will be generated in the directory this command is
