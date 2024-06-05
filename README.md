@@ -75,4 +75,7 @@ from ESLint I believe? So this will have to be setup [manually.](https://bun.sh/
 -   `prettier-plugin-tailwindcss` - auto-sorts Tailwind classes in JSX
 
 ### Husky
+
 -   `lint-staged` - makes pre-commit hooks efficient by only running commands across staged files
+-   `tsc-files` - allows for type-checking per file (see
+    [here](https://github.com/microsoft/TypeScript/issues/6591))
