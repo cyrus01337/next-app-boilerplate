@@ -36,46 +36,49 @@ from ESLint I believe? So this will have to be setup [manually.](https://bun.sh/
 
 ## Inclusions
 
--   [ESLint](https://eslint.org/)
--   [PostCSS](https://postcss.org/)
--   [TailwindCSS](https://tailwindcss.com/)
--   [Prettier](https://prettier.io/)
--   [TypeScript](https://www.typescriptlang.org)
--   [Husky](https://typicode.github.io/husky/)
+-   [ESLint](https://eslint.org/) - standard web development linter
+-   [PostCSS](https://postcss.org/) - modern CSS transformer and framework
+-   [TailwindCSS](https://tailwindcss.com/) - simplifies CSS and offers sensible default styles
+-   [Prettier](https://prettier.io/) - standard web development formatter
+-   [TypeScript](https://www.typescriptlang.org) - extends JavaScript by adding types
+-   [Husky](https://typicode.github.io/husky/) - manages scripts that run just before commits
 
 ## Plugins
 
 ### ESLint
 
--   `eslint-config-prettier` - prevents ESLint conflictions with Prettier
+-   `eslint-config-prettier` - avoid conflicts with ESLint by disabling certain rules
 -   `create next-app` additions
     -   `eslint-config-next`
--   `next/core-web-vitals` - helpful concepts to cover in any Next web app
--   `@typescript-eslint/parser`/`@typescript-eslint/eslint-plugin` - to parse
-    and process TypeScript
+    -   `next/core-web-vitals` - ruleset for accessibility
+-   `@typescript-eslint/parser` - TypeScript parser specifically for ESLint
+-   `@typescript-eslint/eslint-plugin` - required to lint TypeScript files
 
 ### PostCSS
 
 -   `create next-app` additions
-    -   `autoprefixer`
-    -   `postcss-flexbugs-fixes`
-    -   `postcss-preset-env`
+    -   `autoprefixer` - allows for cross-browser compatibility in CSS by duplicating
+        classes with all browser-specific prefixes (if supported)
+    -   `postcss-flexbugs-fixes` - applies hotfixes for common flexbox issues
+    -   `postcss-preset-env` - CSS polyfill support and modern CSS translator for
+        backwards-compatibility
 -   `tailwindcss` - simple, concise CSS library for simplifying styles with sensible defaults
 
 ### TailwindCSS
 
--   `@tailwindcss/typography` - implements the `prose` class that makes text look good
+-   `@tailwindcss/typography` - adds the `prose` class that makes text look good (I use this
+    often enough to warrant it's addition)
 
 ### Prettier
 
--   `@ianvs/prettier-plugin-sort-imports` - auto-sorts JS imports (alternative
-    to [Trivago's implementation](https://github.com/trivago/prettier-plugin-sort-imports),
-    much more customisation)
--   `prettier-plugin-sort-json` - JSON file formatting, typically for configs
--   `prettier-plugin-tailwindcss` - auto-sorts Tailwind classes in JSX
+-   `@ianvs/prettier-plugin-sort-imports` - auto-sorts imports (better alternative to
+    [Trivago's implementation](https://github.com/trivago/prettier-plugin-sort-imports),
+    offers much more customisation)
+-   `prettier-plugin-sort-json` - JSON file formatting, typically for configuration files
+-   `prettier-plugin-tailwindcss` - auto-sorts Tailwind classes
 
 ### Husky
 
--   `lint-staged` - makes pre-commit hooks efficient by only running commands across staged files
--   `tsc-files` - allows for type-checking per file (see
+-   `lint-staged` - run pre-commit hooks only on staged files
+-   `tsc-files` - only typecheck staged files (see
     [here](https://github.com/microsoft/TypeScript/issues/6591))
