@@ -18,7 +18,7 @@ jobs:
                   fetch-depth: 0
 
             - uses: oven-sh/setup-bun@v2
-            - run: bun install --frozen-lockfile
+            - run: bun install --dev --frozen-lockfile
 
             - uses: creyD/prettier_action@v4.3
               with:
