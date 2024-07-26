@@ -19,7 +19,6 @@ jobs:
 
             - uses: oven-sh/setup-bun@v2
               env:
-                  CI: true
                   HUSKY: 0
 
             - run: bun install --frozen-lockfile
