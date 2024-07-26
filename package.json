@@ -4,13 +4,13 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev": "next dev",
         "build": "next build",
+        "dev": "next dev",
         "format": "prettier --write .",
-        "preview": "next build && next start",
-        "start": "next start",
         "lint": "next lint && tsc",
-        "prepare": "husky"
+        "prepare": ".husky/install.js",
+        "preview": "next build && next start",
+        "start": "next start"
     },
     "dependencies": {
         "lodash": "^4.17.21",
