@@ -21,7 +21,7 @@ jobs:
               env:
                   HUSKY: 0
 
-            - run: bun install --dev --frozen-lockfile
+            - run: bun install --dev
 
             - uses: creyD/prettier_action@v4.3
               with:
