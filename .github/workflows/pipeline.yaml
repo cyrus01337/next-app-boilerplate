@@ -17,4 +17,6 @@ jobs:
                   ref: ${{ github.head_ref }}
                   fetch-depth: 0
 
-            - uses: hudsonm62/prettier-cli@v1.0.0
+            - uses: actionsx/prettier@v2
+              with:
+                  args: --check .
