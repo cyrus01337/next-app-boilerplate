@@ -17,6 +17,10 @@ jobs:
                   ref: ${{ github.head_ref }}
                   fetch-depth: 0
 
-            - uses: actionsx/prettier@v2
+            - uses: oven-sh/setup-bun@v2
+            - run: bun install --frozen-lockfile
+
+            - uses: creyD/prettier_action@v4.3
               with:
-                  args: --check .
+                  prettier_options: --check .
+                  only_changed: true
