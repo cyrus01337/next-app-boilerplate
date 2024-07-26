@@ -1,0 +1,23 @@
+name: Pipeline
+
+on:
+    pull_request:
+    push:
+        branches:
+            - main
+
+jobs:
+    check:
+        name: Check formatting with Prettier
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  ref: ${{ github.head_ref }}
+                  fetch-depth: 0
+
+            - uses: creyD/prettier_action@v4
+              with:
+                  prettier_options: --check .
+                  only_changed: true
