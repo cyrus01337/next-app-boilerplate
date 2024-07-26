@@ -1,6 +1,8 @@
 import process from "process";
 
 if (process.env.NODE_ENV === "production" || process.env.CI === "true" || !process.env.HUSKY) {
+    console.log("Skipping Husky...");
+
     process.exit(0);
 }
 
