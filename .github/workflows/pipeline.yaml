@@ -22,7 +22,7 @@ jobs:
                   CI: true
                   HUSKY: 0
 
-            - run: bun install --dev
+            - run: bun install --frozen-lockfile
 
             - uses: creyD/prettier_action@v4.3
               with:
