@@ -1,7 +1,4 @@
-.devcontainer/
-node_modules/
+*.md
 .*
 LICENSE
-*.ts
-*.md
-*.cjs
+node_modules/
