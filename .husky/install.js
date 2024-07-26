@@ -4,7 +4,7 @@ if (
     process.env.NODE_ENV === "production" ||
     process.env.CI === "true" ||
     process.env.HUSKY === 0 ||
-    process.env.HUSKY === false
+    process.env.HUSKY === "false"
 ) {
     console.log("Skipping Husky...");
 
