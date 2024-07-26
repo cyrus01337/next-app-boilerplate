@@ -1,6 +1,6 @@
 import process from "process";
 
-if (process.env.NODE_ENV === "production" || process.env.CI === "true") {
+if (process.env.NODE_ENV === "production" || process.env.CI === "true" || !process.env.HUSKY) {
     process.exit(0);
 }
 
