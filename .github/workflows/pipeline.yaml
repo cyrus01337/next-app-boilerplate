@@ -17,7 +17,7 @@ jobs:
                   ref: ${{ github.head_ref }}
                   fetch-depth: 0
 
-            - uses: creyD/prettier_action@v4
+            - uses: creyD/prettier_action@v4.3
               with:
                   prettier_options: --check .
                   only_changed: true
