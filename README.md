@@ -36,12 +36,18 @@ from ESLint I believe? So this will have to be setup [manually.](https://bun.sh/
 
 ## Inclusions
 
+The project comes with a built-in pipeline to enforce formatting across the project, as well as a
+lint script (`lint:formatting`) that allows you to locally confirm whether the project abides by the
+formatting style, as defined in
+[`.prettierrc`](https://github.com/cyrus01337/next-app-boilerplate/blob/main/.prettierrc).
+
 -   [ESLint](https://eslint.org/) - standard web development linter
 -   [PostCSS](https://postcss.org/) - modern CSS transformer and framework
 -   [TailwindCSS](https://tailwindcss.com/) - simplifies CSS and offers sensible default styles
 -   [Prettier](https://prettier.io/) - standard web development formatter
 -   [TypeScript](https://www.typescriptlang.org) - extends JavaScript by adding types
--   [Husky](https://typicode.github.io/husky/) - manages scripts that run just before commits
+-   [Husky](https://typicode.github.io/husky/) - manages scripts that run just before commits, i.e.
+    automate formatting, enforce type-checking
 
 ## Plugins
 
