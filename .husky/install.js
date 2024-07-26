@@ -1,4 +1,3 @@
-#!/usr/bin/env bun
 import process from "process";
 
 if (process.env.NODE_ENV === "production" || process.env.CI === "true") {
