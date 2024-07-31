@@ -3,7 +3,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN ["apt-get", "update"]
 RUN ["apt-get", "dist-upgrade", "-y"]
-RUN ["apt-get", "install", "-y", "curl", "git", "unzip", "zsh"]
+RUN ["apt-get", "install", "-y", "curl", "git", "sudo", "unzip", "zsh"]
 
 FROM base AS shell
 USER node
