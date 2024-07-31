@@ -5,6 +5,9 @@ RUN ["apt-get", "update"]
 RUN ["apt-get", "dist-upgrade", "-y"]
 RUN ["apt-get", "install", "-y", "curl", "git", "sudo", "unzip", "zsh"]
 
+RUN echo "node ALL=NOPASSWD: ALL" >> /etc/sudoers.d/50-node
+RUN echo "Defaults    env_keep += 'DEBIAN_FRONTEND'" >> /etc/sudoers.d/env_keep
+
 RUN ["groupadd", "docker"]
 RUN ["usermod", "-aG", "docker", "node"]
 
