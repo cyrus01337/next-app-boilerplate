@@ -1,6 +1,6 @@
 FROM node:22-bookworm AS base
 WORKDIR /app
-ARG DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN ["apt", "update"]
 RUN ["apt", "upgrade", "-y"]
@@ -15,14 +15,17 @@ USER node
 RUN curl -fsSL https://bun.sh/install | bash
 
 FROM bun AS dependencies
+
 COPY . .
 RUN --mount=type=cache,target=/store/bun ["bun", "install"]
 
 FROM dependencies AS build
 ENV NODE_ENV=production
+
 RUN ["bun", "--bun", "run", "build", "--no-lint"]
 
 FROM build AS cleanup
+
 RUN ["apt", "autoremove", "-y"]
 RUN ["apt", "clean", "-y"]
 RUN ["bun", "pm", "cache", "rm"]
