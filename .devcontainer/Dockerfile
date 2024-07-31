@@ -14,8 +14,8 @@ RUN ["usermod", "-aG", "docker", "node"]
 FROM base AS shell
 USER node
 
-RUN sh -c "$(curl -fsSL https://install.ohmyz.sh)" && \
-    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /home/node/.oh-my-zsh/custom/themes/powerlevel10k
+RUN sh -c "$(curl -fsSL https://install.ohmyz.sh)"
+RUN ["git", "clone", "--depth=1", "https://github.com/romkatv/powerlevel10k.git", "/home/node/.oh-my-zsh/custom/themes/powerlevel10k"]
 COPY .zshrc .p10k.zsh $HOME
 
 FROM shell AS bun
