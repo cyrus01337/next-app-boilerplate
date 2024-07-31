@@ -1,4 +1,4 @@
-FROM node:22-bookworm AS base
+FROM node:22.5.1-bookworm AS base
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN ["apt-get", "update"]
