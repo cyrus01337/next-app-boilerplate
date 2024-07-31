@@ -7,11 +7,12 @@ RUN ["apt", "upgrade", "-y"]
 RUN --mount=type=cache,target=/store/apt ["apt", "install", "-y", "curl", "unzip"]
 
 FROM base AS bun
+USER node
+
 # Sharp is a NextJS dependency that relies on node-gyp, which Bun alone cannot
 # yet utilise, so we share Node from the chosen base image and manually install
 # Bun here for later use
 RUN curl -fsSL https://bun.sh/install | bash
-ENV PATH="$PATH:/root/.bun/bin"
 
 FROM bun AS dependencies
 COPY . .
