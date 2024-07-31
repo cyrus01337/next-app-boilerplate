@@ -5,6 +5,9 @@ RUN ["apt-get", "update"]
 RUN ["apt-get", "dist-upgrade", "-y"]
 RUN ["apt-get", "install", "-y", "curl", "git", "sudo", "unzip", "zsh"]
 
+RUN ["groupadd", "docker"]
+RUN ["usermod", "-aG", "docker", "node"]
+
 FROM base AS shell
 USER node
 
