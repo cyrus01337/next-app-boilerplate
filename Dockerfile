@@ -14,6 +14,7 @@ RUN curl -fsSL https://bun.sh/install | bash
 ENV PATH="$PATH:/root/.bun/bin"
 
 FROM bun AS dependencies
+ENV HUSKY=0
 
 COPY . .
 RUN --mount=type=cache,target=/store/bun ["bun", "install"]
