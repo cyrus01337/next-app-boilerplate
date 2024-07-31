@@ -1,4 +1,4 @@
-FROM node:22-bookworm-slim AS base
+FROM node:22-bookworm AS base
 WORKDIR /app
 ARG DEBIAN_FRONTEND=noninteractive
 
