@@ -1,4 +1,11 @@
 *.md
-.*
+.devcontainer/
+.github/
+.dockerignore
+.editorconfig
+.gitignore
+.linstagedrc
+.prettierignore
+.prettierrc
 LICENSE
 node_modules/
