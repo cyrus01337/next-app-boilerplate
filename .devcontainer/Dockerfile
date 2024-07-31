@@ -1,11 +1,19 @@
-FROM mcr.microsoft.com/devcontainers/javascript-node:22 AS base
+FROM node:22-bookworm AS base
 ENV DEBIAN_FRONTEND=noninteractive
-WORKDIR /workspace
 
-RUN ["apt", "update"]
-RUN ["apt", "install", "-y", "curl", "unzip"]
+RUN apt-get update
+RUN apt-get dist-upgrade -y
+RUN apt-get install -y curl git unzip zsh
 
-FROM base AS bun
+FROM base AS shell
 USER node
+
+RUN sh -c "$(curl -fsSL https://install.ohmyz.sh)" && \
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /home/node/.oh-my-zsh/custom/themes/powerlevel10k
+COPY .zshrc .p10k.zsh $HOME
+
+FROM shell AS bun
+USER node
+WORKDIR /workspace
 
 RUN curl -fsSL https://bun.sh/install | bash
