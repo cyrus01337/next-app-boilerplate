@@ -16,7 +16,7 @@ USER node
 
 RUN sh -c "$(curl -fsSL https://install.ohmyz.sh)" && \
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /home/node/.oh-my-zsh/custom/themes/powerlevel10k
-COPY .zshrc .p10k.zsh $HOME
+COPY .zshrc .p10k.zsh /home/node/
 
 FROM shell AS bun
 USER node
