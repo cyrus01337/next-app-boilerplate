@@ -4,7 +4,7 @@
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
     "workspaceFolder": "/workspace",
     "postCreateUser": "node",
-    "postCreateCommand": "bun install && (bun pm trust --all || true) && bun run prepare",
+    "postCreateCommand": ".devcontainer/setup.sh",
     "customizations": {
         "vscode": {
             "extensions": [
