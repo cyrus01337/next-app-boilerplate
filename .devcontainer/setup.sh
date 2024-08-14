@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
+export BUN_INSTALL="/home/node/.bun"
+export PATH="$PATH:$BUN_INSTALL/bin"
+
 bun install
 bun pm trust --all || true
 
