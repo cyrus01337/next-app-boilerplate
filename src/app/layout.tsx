@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 
 import type { Metadata } from "next";
 
-interface Props {
+interface Properties {
     children: React.ReactNode;
 }
 
@@ -17,10 +17,11 @@ export const metadata: Metadata = {
     description: "WIP",
 };
 
-export default function RootLayout(props: Props) {
+export default function RootLayout(props: Properties) {
     return (
         <html className={INTER.className} lang="en">
             <body>{props.children}</body>
         </html>
     );
 }
+
