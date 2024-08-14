@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-sudo apt-get update
-echo
+set -e
 
 bun install
 bun pm trust --all || true
