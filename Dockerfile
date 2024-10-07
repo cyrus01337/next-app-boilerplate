@@ -1,4 +1,4 @@
-FROM node:22-bookworm-slim AS base
+FROM node:22-bookworm AS base
 WORKDIR /app
 ENV DEBIAN_FRONTEND="noninteractive"
 
@@ -26,7 +26,6 @@ WORKDIR /app
 COPY .husky ./.husky
 
 RUN --mount=type=cache,target=/store/bun ["bun", "install", "--frozen-lockfile"]
-# RUN ["bun", "install", "--frozen-lockfile"]
 
 FROM bun AS builder
 WORKDIR /app
@@ -34,21 +33,15 @@ WORKDIR /app
 COPY . .
 COPY --from=dependencies /app/node_modules ./node_modules
 
-RUN ["bun", "--bun", "run", "build", "--no-lint"]
+RUN ["bun", "run", "build", "--no-lint"]
 
-FROM bun AS cleanup
-
-RUN ["apt", "autoremove", "-y"]
-RUN ["apt", "clean", "-y"]
-RUN ["bun", "pm", "cache", "rm"]
-
-FROM cleanup AS release
+FROM oven/bun:distroless
 ENV NODE_ENV="production"
 WORKDIR /app
 
-COPY --from=builder /app/public ./public
+COPY --from=builder /app/src/public ./public
 COPY --from=builder /app/.next/standalone ./
-COPY --from=builder --chown=$USER:$GROUP /app/.next/static ./.next/static
+COPY --from=builder /app/.next/static ./.next/static
 
-CMD ["bun", "run", "server.js"]
+CMD ["server.js"]
 
