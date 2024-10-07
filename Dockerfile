@@ -1,8 +1,5 @@
 FROM node:22-bookworm-slim AS base
 WORKDIR /app
-ENV USER="node"
-ENV GROUP="$USER"
-ENV HOME="/home/$USER"
 ENV DEBIAN_FRONTEND="noninteractive"
 
 RUN ["apt", "update"]
@@ -10,8 +7,7 @@ RUN --mount=type=cache,target=/store/apt ["apt", "dist-upgrade", "-y"]
 RUN --mount=type=cache,target=/store/apt ["apt", "install", "-y", "curl", "unzip"]
 
 FROM base AS bun
-USER $USER
-ENV BUN_INSTALL="$HOME/.bun"
+ENV BUN_INSTALL="/root/.bun"
 
 # Sharp is a NextJS dependency that relies on node-gyp, which Bun alone cannot
 # yet utilise, so we share Node from the chosen base image and manually install
@@ -20,21 +16,19 @@ RUN curl -fsSL https://bun.sh/install | bash
 
 COPY bun.lockb package.json ./
 
-ENV PATH="$PATH:$HOME/.bun/bin"
+ENV PATH="$PATH:/root/.bun/bin"
 
 FROM bun AS dependencies
-USER root
 ENV HUSKY=0
 WORKDIR /app/node_modules
 WORKDIR /app
 
-COPY .husky/ ./.husky/
+COPY .husky ./.husky
 
-RUN --mount=type=cache,target=/store/bun ["bun", "install"]
+RUN --mount=type=cache,target=/store/bun ["bun", "install", "--frozen-lockfile"]
+# RUN ["bun", "install", "--frozen-lockfile"]
 
-FROM bun AS build
-USER root
-ARG NODE_ENV="production"
+FROM bun AS builder
 WORKDIR /app
 
 COPY . .
@@ -43,20 +37,18 @@ COPY --from=dependencies /app/node_modules ./node_modules
 RUN ["bun", "--bun", "run", "build", "--no-lint"]
 
 FROM bun AS cleanup
-USER root
 
 RUN ["apt", "autoremove", "-y"]
 RUN ["apt", "clean", "-y"]
 RUN ["bun", "pm", "cache", "rm"]
 
 FROM cleanup AS release
-ARG NODE_ENV
-USER $USER
+ENV NODE_ENV="production"
 WORKDIR /app
 
-COPY --from=build --chown=$USER:$GROUP /app/.next/standalone ./
-COPY --from=build --chown=$USER:$GROUP /app/.next/static ./.next/static
-COPY --from=dependencies --chown=$USER:$GROUP /app/node_modules ./node_modules/
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder --chown=$USER:$GROUP /app/.next/static ./.next/static
 
-CMD ["bun", ".next/standalone/server.js"]
+CMD ["bun", "run", "server.js"]
 
