@@ -1,12 +1,13 @@
 {
     "name": "Next App Boilerplate",
     "dockerFile": "Dockerfile",
+    "runArgs": [
+        "--privileged"
+    ],
     "workspaceFolder": "/workspace",
-    "remoteUser": "node",
-    "postCreateUser": "node",
-    "postCreateCommand": ".devcontainer/setup.sh",
+    "remoteUser": "next",
+    "postCreateUser": "next",
     "features": {
-        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-        "ghcr.io/devcontainers/features/github-cli:1": {}
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
     }
 }
