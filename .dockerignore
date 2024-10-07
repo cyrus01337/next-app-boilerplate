@@ -3,9 +3,15 @@
 .github/
 .dockerignore
 .editorconfig
+.git/
 .gitignore
+.eslintrc
 .linstagedrc
+.next/
+!.next/static
+!.next/standalone
 .prettierignore
 .prettierrc
+Dockerfile
 LICENSE
 node_modules/
