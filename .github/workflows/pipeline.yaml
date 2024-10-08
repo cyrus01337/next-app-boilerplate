@@ -78,4 +78,3 @@ jobs:
                   context: .
                   push: true
                   tags: ${{ env.PRODUCTION }},${{ env.PRODUCTION }}-${{ env.MAJOR }},${{ env.PRODUCTION }}-${{ env.MAJOR }}.${{ env.MINOR }},${{ env.PRODUCTION }}-${{ env.SEMVER }}
-
