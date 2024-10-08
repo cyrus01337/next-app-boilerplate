@@ -2,8 +2,7 @@ name: next-app-boilerplate
 
 services:
     webserver:
-        build:
-            context: .
+        image: cyrus01337/next-app-boilerplate:production
         restart: always
         ports:
             - "3000:3000"
