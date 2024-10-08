@@ -1,5 +1,5 @@
 FROM debian:bookworm-slim AS system
-ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND="noninteractive"
 ENV USER="next"
 ENV GROUP="$USER"
 ENV HOME="/home/$USER"
