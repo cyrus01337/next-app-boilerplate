@@ -46,7 +46,7 @@ jobs:
                     password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
             -
-                name: Build and push
+                name: Publish development tags
                 uses: docker/build-push-action@v6
                 with:
                     context: .devcontainer/
@@ -54,7 +54,7 @@ jobs:
                     tags: ${{ env.DEVELOPMENT }},${{ env.DEVELOPMENT }}-${{ env.MAJOR }},${{ env.DEVELOPMENT }}-${{ env.MAJOR }}.${{ env.MINOR }},${{ env.DEVELOPMENT }}-${{ env.SEMVER }}
 
             -
-                name: Build and push
+                name: Publish production tags
                 uses: docker/build-push-action@v6
                 with:
                     context: .
