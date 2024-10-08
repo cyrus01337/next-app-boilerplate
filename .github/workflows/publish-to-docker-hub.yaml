@@ -28,7 +28,7 @@ jobs:
 
                     IFS='.' read -ra versions <<< "$SEMVER"
 
-                    echo "SEMVER=\"$SEMBER\"" >> "$GITHUB_ENV"
+                    echo "SEMVER=\"$SEMVER\"" >> "$GITHUB_ENV"
                     echo "MAJOR=\"${versions[0]}\"" >> "$GITHUB_ENV"
                     echo "MINOR=\"${versions[1]}\"" >> "$GITHUB_ENV"
                     echo "DEVELOPMENT=\"$GITHUB_REPOSITORY:development\"" >> "$GITHUB_ENV"
