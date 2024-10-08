@@ -49,11 +49,7 @@ jobs:
                 with:
                     context: .devcontainer/
                     push: true
-                    tags:
-                        - ${{ env.DEVELOPMENT }}
-                        - ${{ env.DEVELOPMENT }}-${{ env.MAJOR }}
-                        - ${{ env.DEVELOPMENT }}-${{ env.MAJOR }}.${{ env.MINOR }}
-                        - ${{ env.DEVELOPMENT }}-${{ env.SEMVER }}
+                    tags: ${{ env.DEVELOPMENT }},${{ env.DEVELOPMENT }}-${{ env.MAJOR }},${{ env.DEVELOPMENT }}-${{ env.MAJOR }}.${{ env.MINOR }},${{ env.DEVELOPMENT }}-${{ env.SEMVER }}
 
             -
                 name: Build and push
@@ -61,9 +57,5 @@ jobs:
                 with:
                     context: .
                     push: true
-                    tags:
-                        - ${{ env.PRODUCTION }}
-                        - ${{ env.PRODUCTION }}-${{ env.MAJOR }}
-                        - ${{ env.PRODUCTION }}-${{ env.MAJOR }}.${{ env.MINOR }}
-                        - ${{ env.PRODUCTION }}-${{ env.SEMVER }}
+                    tags: ${{ env.PRODUCTION }},${{ env.PRODUCTION }}-${{ env.MAJOR }},${{ env.PRODUCTION }}-${{ env.MAJOR }}.${{ env.MINOR }},${{ env.PRODUCTION }}-${{ env.SEMVER }}
 
