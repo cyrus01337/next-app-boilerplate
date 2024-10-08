@@ -4,7 +4,7 @@ on:
     push:
         branches:
             - main
-            - publshing-docker-images
+            - publishing-docker-images
 
 jobs:
     publish:
