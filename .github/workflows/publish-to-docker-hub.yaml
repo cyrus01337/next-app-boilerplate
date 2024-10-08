@@ -28,11 +28,11 @@ jobs:
 
                     IFS='.' read -ra versions <<< "$SEMVER"
 
-                    echo "SEMVER=\"$SEMVER\"" >> "$GITHUB_ENV"
-                    echo "MAJOR=\"${versions[0]}\"" >> "$GITHUB_ENV"
-                    echo "MINOR=\"${versions[1]}\"" >> "$GITHUB_ENV"
-                    echo "DEVELOPMENT=\"$GITHUB_REPOSITORY:development\"" >> "$GITHUB_ENV"
-                    echo "PRODUCTION=\"$GITHUB_REPOSITORY:production\"" >> "$GITHUB_ENV"
+                    echo "SEMVER=$SEMVER" >> "$GITHUB_ENV"
+                    echo "MAJOR=${versions[0]}" >> "$GITHUB_ENV"
+                    echo "MINOR=${versions[1]}" >> "$GITHUB_ENV"
+                    echo "DEVELOPMENT=$GITHUB_REPOSITORY:development" >> "$GITHUB_ENV"
+                    echo "PRODUCTION=$GITHUB_REPOSITORY:production" >> "$GITHUB_ENV"
 
             -
                 uses: docker/setup-buildx-action@v3
