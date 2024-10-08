@@ -8,7 +8,7 @@ WORKDIR /workspace
 RUN ["apt-get", "update"]
 RUN ["apt-get", "dist-upgrade", "-y"]
 RUN ["apt-get", "install", "-y", "black", "curl", "fd-find", "gcc", "git", "isort", "lua5.1", "luarocks", "make", "python3.11-venv", "python3-pip", "ripgrep", "sudo", "unzip", "zsh"]
-RUN ["apt-get", "install", "-y", "iproute2"]
+RUN ["apt-get", "install", "-y", "iproute2", "jq"]
 
 RUN ["update-alternatives", "--install", "/usr/bin/python", "python", "/usr/bin/python3", "20"]
 RUN addgroup $GROUP \
