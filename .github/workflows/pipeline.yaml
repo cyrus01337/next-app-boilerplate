@@ -56,7 +56,7 @@ jobs:
                   echo "SEMVER=$SEMVER" >> "$GITHUB_ENV"
                   echo "MAJOR=${versions[0]}" >> "$GITHUB_ENV"
                   echo "MINOR=${versions[1]}" >> "$GITHUB_ENV"
-                  echo "AUTHOR=${AUTHOR:-split_by_slash[0]}" >> "$GITHUB_ENV"
+                  echo "AUTHOR=${AUTHOR:-${split_by_slash[0]}}" >> "$GITHUB_ENV"
                   echo "DEVELOPMENT=$GITHUB_REPOSITORY:development" >> "$GITHUB_ENV"
                   echo "PRODUCTION=$GITHUB_REPOSITORY:production" >> "$GITHUB_ENV"
 
