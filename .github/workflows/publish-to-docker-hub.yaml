@@ -1,0 +1,69 @@
+name: Publish to Docker Hub
+
+on:
+    push:
+        branches:
+            - main
+            - publshing-docker-images
+
+jobs:
+    publish:
+        name: Publish to Docker Hub
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  ref: ${{ github.head_ref }}
+                  fetch-depth: 0
+
+            -
+                name: Extract project metadata
+                run: |
+                    SEMVER=$(jq ".version" package.json | tr -d '"')
+
+                    declare -a versions=()
+
+                    IFS='.' read -ra versions <<< "$SEMVER"
+
+                    echo "SEMVER=\"$SEMBER\"" >> "$GITHUB_ENV"
+                    echo "MAJOR=\"${versions[0]}\"" >> "$GITHUB_ENV"
+                    echo "MINOR=\"${versions[1]}\"" >> "$GITHUB_ENV"
+                    echo "DEVELOPMENT=\"${{ env.GITHUB_REPOSITORY }}:development\"" >> "$GITHUB_ENV"
+                    echo "PRODUCTION=\"${{ env.GITHUB_REPOSITORY }}:production\"" >> "$GITHUB_ENV"
+
+            -
+                uses: docker/setup-buildx-action@v3
+                name: Setup Docker Buildx
+
+            -
+                name: Login to Docker Hub
+                uses: docker/login-action@v3
+                with:
+                    username: ${{ vars.DOCKER_HUB_USERNAME }}
+                    password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+            -
+                name: Build and push
+                uses: docker/build-push-action@v6
+                with:
+                    context: .devcontainer/
+                    push: true
+                    tags:
+                        - ${{ env.DEVELOPMENT }}
+                        - ${{ env.DEVELOPMENT }}-${{ env.MAJOR }}
+                        - ${{ env.DEVELOPMENT }}-${{ env.MAJOR }}.${{ env.MINOR }}
+                        - ${{ env.DEVELOPMENT }}-${{ env.SEMVER }}
+
+            -
+                name: Build and push
+                uses: docker/build-push-action@v6
+                with:
+                    context: .
+                    push: true
+                    tags:
+                        - ${{ env.PRODUCTION }}
+                        - ${{ env.PRODUCTION }}-${{ env.MAJOR }}
+                        - ${{ env.PRODUCTION }}-${{ env.MAJOR }}.${{ env.MINOR }}
+                        - ${{ env.PRODUCTION }}-${{ env.SEMVER }}
+
