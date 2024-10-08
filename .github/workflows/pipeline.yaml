@@ -32,7 +32,7 @@ jobs:
         name: Publish to Docker Hub
         needs: check
         runs-on: ubuntu-latest
-        if: github.ref == 'refs/heads/main' && github.repository == '*/*-app-boilerplate'
+        if: github.ref == 'refs/heads/main' && github.repository == '*/next-app-boilerplate'
 
         steps:
             - uses: actions/checkout@v4
