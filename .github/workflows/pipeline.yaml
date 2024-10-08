@@ -42,17 +42,21 @@ jobs:
 
             - name: Extract project metadata
               env:
+                  AUTHOR: ${{ vars.DOCKER_HUB_USERNAME }}
                   GITHUB_REPOSITORY: ${{ env.GITHUB_REPOSITORY }}
               run: |
                   SEMVER=$(jq ".version" package.json | tr -d '"')
 
                   declare -a versions=()
+                  declare -a split_by_slash=()
 
                   IFS='.' read -ra versions <<< "$SEMVER"
+                  IFS="/" read -ra split_by_slash <<< "$GITHUB_REPOSITORY"
 
                   echo "SEMVER=$SEMVER" >> "$GITHUB_ENV"
                   echo "MAJOR=${versions[0]}" >> "$GITHUB_ENV"
                   echo "MINOR=${versions[1]}" >> "$GITHUB_ENV"
+                  echo "AUTHOR=${AUTHOR:-split_by_slash[0]}" >> "$GITHUB_ENV"
                   echo "DEVELOPMENT=$GITHUB_REPOSITORY:development" >> "$GITHUB_ENV"
                   echo "PRODUCTION=$GITHUB_REPOSITORY:production" >> "$GITHUB_ENV"
 
@@ -62,7 +66,7 @@ jobs:
             - name: Login to Docker Hub
               uses: docker/login-action@v3
               with:
-                  username: ${{ vars.DOCKER_HUB_USERNAME }}
+                  username: ${{ env.AUTHOR }}
                   password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
             - name: Publish development tags
