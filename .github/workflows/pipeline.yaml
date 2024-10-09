@@ -27,4 +27,3 @@ jobs:
                   prettier_options: --check .
                   dry: true
                   only_changed: true
-
