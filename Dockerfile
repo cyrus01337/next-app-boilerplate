@@ -1,6 +1,6 @@
 FROM node:22-bookworm AS base
-WORKDIR /app
 ENV DEBIAN_FRONTEND="noninteractive"
+WORKDIR /app
 
 RUN ["apt", "update"]
 RUN --mount=type=cache,target=/store/apt ["apt", "dist-upgrade", "-y"]
