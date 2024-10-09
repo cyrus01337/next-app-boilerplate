@@ -1,1 +1,1 @@
-../external/configurations/devcontainers/setup.sh
+../external/configurations/devcontainers/bun/setup.sh
