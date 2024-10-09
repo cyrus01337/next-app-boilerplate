@@ -1,8 +1,1 @@
-.devcontainer/devcontainer.json
-.next
-.pnp.*
-.yarn
-build
-bun.lockb
-coverage
-pnpm-lock.yaml
+external/configurations/prettier/.prettierignore
