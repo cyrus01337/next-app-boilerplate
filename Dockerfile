@@ -39,7 +39,7 @@ FROM oven/bun:distroless
 ENV NODE_ENV="production"
 WORKDIR /app
 
-COPY --from=builder /app/src/public ./public
+COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 
