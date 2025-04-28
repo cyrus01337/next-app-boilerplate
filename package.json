@@ -23,6 +23,7 @@
         "sharp": "^0.32.6"
     },
     "devDependencies": {
+        "@fsouza/prettierd": "^0.26.1",
         "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
         "@tailwindcss/typography": "^0.5.10",
         "@types/node": "^20.8.9",
