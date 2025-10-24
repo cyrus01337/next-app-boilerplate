@@ -25,6 +25,7 @@
     "devDependencies": {
         "@fsouza/prettierd": "^0.26.1",
         "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
+        "@tailwindcss/postcss": "^4.1.16",
         "@types/node": "^20.8.9",
         "@types/react": "19",
         "@typescript-eslint/eslint-plugin": "^6.9.0",
@@ -40,8 +41,8 @@
         "postcss-preset-env": "^8.5.1",
         "prettier": "^3.0.3",
         "prettier-plugin-sort-json": "^3.1.0",
-        "prettier-plugin-tailwindcss": "^0.5.7",
-        "tailwindcss": "^3.3.5",
+        "prettier-plugin-tailwindcss": "^0.7.1",
+        "tailwindcss": "^4.1.16",
         "tsc-files": "^1.1.4",
         "typescript": "^5.2.2"
     },

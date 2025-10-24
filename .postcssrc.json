@@ -10,6 +10,6 @@
             },
             "stage": 3
         },
-        "tailwindcss": {}
+        "@tailwindcss/postcss": {}
     }
 }
