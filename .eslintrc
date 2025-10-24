@@ -14,6 +14,7 @@
         "*.js",
         ".next/",
         "archive/",
+        "external/",
         "dist/",
         "next-env.d.ts",
         "next.config.js",
