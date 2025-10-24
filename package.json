@@ -8,7 +8,7 @@
         "build": "next build",
         "dev": "next dev --turbo",
         "format": "prettier --write .",
-        "lint": "eslint . && tsc",
+        "lint": "eslint .",
         "lint:formatting": "prettier --check .",
         "prepare": "bun .husky/install.js",
         "preview": "next build && next start",
@@ -22,6 +22,7 @@
         "sharp": "^0.32.6"
     },
     "devDependencies": {
+        "@eslint/js": "^9.38.0",
         "@fsouza/prettierd": "^0.26.1",
         "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
         "@tailwindcss/postcss": "^4.1.16",
@@ -30,9 +31,12 @@
         "@typescript-eslint/eslint-plugin": "^6.9.0",
         "@typescript-eslint/parser": "^6.9.0",
         "autoprefixer": "^10.4.16",
-        "eslint": "^8.52.0",
-        "eslint-config-next": "15.0.0",
-        "eslint-config-prettier": "^9.0.0",
+        "eslint": "^9.38.0",
+        "eslint-config-next": "^16.0.0",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-react": "^7.37.5",
+        "eslint-plugin-react-hooks": "^7.0.1",
+        "globals": "^16.4.0",
         "husky": "^9.0.11",
         "lint-staged": "^15.2.4",
         "postcss": "^8.4.31",
@@ -43,7 +47,8 @@
         "prettier-plugin-tailwindcss": "^0.7.1",
         "tailwindcss": "^4.1.16",
         "tsc-files": "^1.1.4",
-        "typescript": "^5.2.2"
+        "typescript": "^5.2.2",
+        "typescript-eslint": "^8.46.2"
     },
     "trustedDependencies": [
         "sharp",

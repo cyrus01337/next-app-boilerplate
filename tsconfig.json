@@ -12,6 +12,7 @@
         "module": "ESNext",
         "moduleResolution": "Bundler",
         "noEmit": true,
+        "noImplicitAny": true,
         "paths": {
             "~/*": ["./src/*"]
         },
@@ -26,5 +27,12 @@
         "target": "ESNext"
     },
     "exclude": ["node_modules/"],
-    "include": ["./src/**/*", "./*.js", "./*.cjs", "./*.ts", "./*.mjs", ".next/types/**/*.ts"]
+    "include": [
+        "src/**/*.{js,ts,jsx,tsx}",
+        ".husky/install.js",
+        ".next/types/**/*.ts",
+        "index.d.ts",
+        "next-env.d.ts",
+        "eslint.config.ts"
+    ]
 }
