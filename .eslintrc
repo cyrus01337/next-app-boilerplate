@@ -15,21 +15,30 @@
         ".next/",
         "archive/",
         "dist/",
+        "next-env.d.ts",
         "next.config.js",
         "node_modules/",
         "public/"
     ],
     "overrides": [
         {
-            "extends": ["plugin:@typescript-eslint/disable-type-checked"],
-            "files": ["./*.js", "./*.jsx", "./*.mjs"]
+            "extends": [
+                "plugin:@typescript-eslint/disable-type-checked"
+            ],
+            "files": [
+                "./*.js",
+                "./*.jsx",
+                "./*.mjs"
+            ]
         }
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "project": true
     },
-    "plugins": ["@typescript-eslint"],
+    "plugins": [
+        "@typescript-eslint"
+    ],
     "root": true,
     "rules": {
         "@typescript-eslint/ban-ts-comment": "off",
@@ -42,7 +51,10 @@
         "react/no-unescaped-entities": [
             "warn",
             {
-                "forbid": [">", "}"]
+                "forbid": [
+                    ">",
+                    "}"
+                ]
             }
         ],
         "react/prop-types": "off",
