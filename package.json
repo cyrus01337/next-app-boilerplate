@@ -6,7 +6,7 @@
     "type": "module",
     "scripts": {
         "build": "next build",
-        "dev": "next dev",
+        "dev": "next dev --turbo",
         "format": "prettier --write .",
         "lint": "next lint && tsc",
         "lint:formatting": "prettier --check .",
@@ -17,9 +17,9 @@
     },
     "dependencies": {
         "lodash": "^4.17.21",
-        "next": "^14.0.3",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
+        "next": "15",
+        "react": "19",
+        "react-dom": "19",
         "sharp": "^0.32.6"
     },
     "devDependencies": {
@@ -27,12 +27,12 @@
         "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
         "@tailwindcss/typography": "^0.5.10",
         "@types/node": "^20.8.9",
-        "@types/react": "^18.2.33",
+        "@types/react": "npm:types-react@19.0.0-rc.1",
         "@typescript-eslint/eslint-plugin": "^6.9.0",
         "@typescript-eslint/parser": "^6.9.0",
         "autoprefixer": "^10.4.16",
         "eslint": "^8.52.0",
-        "eslint-config-next": "^14.0.3",
+        "eslint-config-next": "15.0.0",
         "eslint-config-prettier": "^9.0.0",
         "husky": "^9.0.11",
         "lint-staged": "^15.2.4",
@@ -47,6 +47,10 @@
         "typescript": "^5.2.2"
     },
     "trustedDependencies": [
-        "sharp"
-    ]
+        "sharp",
+        "unrs-resolver"
+    ],
+    "overrides": {
+        "@types/react": "npm:types-react@19.0.0-rc.1"
+    }
 }
