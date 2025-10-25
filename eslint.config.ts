@@ -13,12 +13,15 @@ import tseslint from "typescript-eslint";
 
 export default defineConfig([
     {
-        files: ["**/*.{js,ts,jsx,tsx}"],
+        files: ["**/*.js"],
         plugins: { js },
         extends: ["js/recommended"],
         languageOptions: { globals: { ...globals.browser, ...globals.node } },
     },
     tseslint.configs.stylisticTypeChecked,
+    {
+        files: ["**/*.ts"],
+    },
     {
         languageOptions: {
             parserOptions: {
@@ -39,7 +42,14 @@ export default defineConfig([
             "no-unused-vars": "off",
 
             "@typescript-eslint/ban-ts-comment": "off",
-            "@typescript-eslint/no-unused-vars": "error",
+            "@typescript-eslint/no-unused-vars": [
+                "error",
+                {
+                    argsIgnorePattern: "^_",
+                    varsIgnorePattern: "^_",
+                    caughtErrorsIgnorePattern: "^_",
+                },
+            ],
 
             "react/prop-types": "off",
             "react/react-in-jsx-scope": "off",
