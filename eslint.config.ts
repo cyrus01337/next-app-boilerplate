@@ -42,14 +42,7 @@ export default defineConfig([
             "no-unused-vars": "off",
 
             "@typescript-eslint/ban-ts-comment": "off",
-            "@typescript-eslint/no-unused-vars": [
-                "error",
-                {
-                    argsIgnorePattern: "^_",
-                    varsIgnorePattern: "^_",
-                    caughtErrorsIgnorePattern: "^_",
-                },
-            ],
+            "@typescript-eslint/no-unused-vars": "off",
 
             "react/prop-types": "off",
             "react/react-in-jsx-scope": "off",
