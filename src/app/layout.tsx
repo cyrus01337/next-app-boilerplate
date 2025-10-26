@@ -17,10 +17,10 @@ export const metadata: Metadata = {
     description: "WIP",
 };
 
-export default function RootLayout(props: Properties) {
+export default function RootLayout(properties: Properties) {
     return (
         <html className={INTER.className} lang="en">
-            <body>{props.children}</body>
+            <body>{properties.children}</body>
         </html>
     );
 }
