@@ -8,7 +8,7 @@
         "build": "next build",
         "dev": "next dev --turbo",
         "format": "prettier --write .",
-        "lint": "eslint . && tsc",
+        "lint": "eslint . && tsc --noEmit",
         "lint:formatting": "prettier --check .",
         "prepare": "bun .husky/install.js",
         "preview": "next build && next start",
