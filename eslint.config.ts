@@ -54,6 +54,7 @@ export default defineConfig([
             ],
 
             "react-hooks/exhaustive-deps": "off",
+            "react-hooks/refs": "off",
         },
     },
     globalIgnores([
