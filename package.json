@@ -16,10 +16,13 @@
         "start": "next start"
     },
     "dependencies": {
+        "@orpc/client": "^1.12.2",
+        "@orpc/server": "^1.12.2",
         "next": "15",
         "react": "19",
         "react-dom": "19",
-        "sharp": "^0.32.6"
+        "sharp": "^0.32.6",
+        "zod": "^4.1.13"
     },
     "devDependencies": {
         "@eslint/js": "^9.38.0",
@@ -45,6 +48,7 @@
         "postcss-preset-env": "^8.5.1",
         "prettier": "^3.0.3",
         "prettier-plugin-sort-json": "^3.1.0",
+        "prettier-plugin-sort-props": "^1.1.1",
         "prettier-plugin-tailwindcss": "^0.7.1",
         "tailwindcss": "^4.1.16",
         "tsc-files": "^1.1.4",
@@ -52,6 +56,7 @@
         "typescript-eslint": "^8.46.2"
     },
     "trustedDependencies": [
+        "onnxruntime-node",
         "sharp",
         "unrs-resolver"
     ],

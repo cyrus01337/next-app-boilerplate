@@ -36,13 +36,23 @@ export default defineConfig([
     ...nextTs,
     {
         rules: {
-            "import/no-anonymous-default-export": "off",
             "no-console": "warn",
             "no-control-regex": "off",
             "no-unused-vars": "off",
 
+            "import/no-anonymous-default-export": "off",
+            "import/no-unused-modules": "warn",
+
             "@typescript-eslint/ban-ts-comment": "off",
-            "@typescript-eslint/no-unused-vars": "off",
+            "@typescript-eslint/no-unused-vars": [
+                "warn",
+                {
+                    argsIgnorePattern: "^_",
+                    caughtErrorsIgnorePattern: "^_",
+                    destructuredArrayIgnorePattern: "^_",
+                    varsIgnorePattern: "^_",
+                },
+            ],
 
             "react/prop-types": "off",
             "react/react-in-jsx-scope": "off",
