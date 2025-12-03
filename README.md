@@ -48,6 +48,8 @@ formatting style, as defined in
 -   [TypeScript](https://www.typescriptlang.org) - extends JavaScript by adding types
 -   [Husky](https://typicode.github.io/husky/) - manages scripts that run just before commits, i.e.
     automate formatting, enforce type-checking
+-   [oRPC](https://orpc.dev/) - type-safe data layer integration - very helpful for
+    full-stack
 
 ## Plugins
 
