@@ -3,18 +3,19 @@ import "~/styles/globals.css";
 import { Inter } from "next/font/google";
 
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 
 interface Properties {
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 const INTER = Inter({
-    subsets: ["latin"],
     display: "swap",
+    subsets: ["latin"],
 });
 export const metadata: Metadata = {
-    title: "Next App Boilerplate",
     description: "WIP",
+    title: "Next App Boilerplate",
 };
 
 export default function RootLayout(properties: Properties) {
