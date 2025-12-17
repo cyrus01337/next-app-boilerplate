@@ -1,5 +1,5 @@
 {
-    "*.{js,mjs,cjs}": ["prettier --write", "eslint"],
-    "*.{json,md}": ["prettier --write"],
-    "*.{ts,tsx}": ["prettier --write", "eslint", "tsc-files"]
+    "*": "prettier --ignore-unknown --write",
+    "*.{js,mjs,cjs,ts,tsx}": "eslint",
+    "*.{ts,tsx}": "tsc-files --noEmit"
 }
