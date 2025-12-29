@@ -14,10 +14,10 @@
     ],
     "importOrderParserPlugins": ["typescript", "jsx", "importAssertions"],
     "plugins": [
-        "@ianvs/prettier-plugin-sort-imports",
         "prettier-plugin-sort-json",
         "prettier-plugin-tailwindcss",
-        "prettier-plugin-sort-props"
+        "prettier-plugin-sort-props",
+        "@ianvs/prettier-plugin-sort-imports"
     ],
     "printWidth": 100,
     "sortPropsCustomOrder": [
