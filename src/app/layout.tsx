@@ -2,12 +2,7 @@ import "~/styles/globals.css";
 
 import { Inter } from "next/font/google";
 
-import type { Metadata } from "next";
-import type { ReactNode } from "react";
-
-interface Properties {
-    children: ReactNode;
-}
+import type { Metadata, NextPage } from "next";
 
 const INTER = Inter({
     display: "swap",
@@ -18,10 +13,10 @@ export const metadata: Metadata = {
     title: "Next App Boilerplate",
 };
 
-export default function RootLayout(properties: Properties) {
-    return (
-        <html className={INTER.className} lang="en">
-            <body>{properties.children}</body>
-        </html>
-    );
-}
+const RootLayout: NextPage<LayoutProps<"/">> = properties => (
+    <html className={INTER.className} lang="en">
+        <body>{properties.children}</body>
+    </html>
+);
+
+export default RootLayout;
